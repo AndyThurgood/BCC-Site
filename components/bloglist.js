@@ -4,7 +4,7 @@ import Layout from "./layout";
 
 const BlogList = (props) => (
 <Layout title="Our Blog">
-<div className="brief white-bg text-left">
+<div className="brief grey-bg text-left">
     <div className="container">
         <div className="row">
             <div className="col-md-6 content-section">
@@ -22,27 +22,40 @@ const BlogList = (props) => (
                 </div>
             </div>
         </div>
-        <div className="row">
-        {props.posts.node && props.posts.node.list.map(blogPost => (
-            <div key={blogPost.id} className="col-md-4">       
-                <Link to={"/blog/" + blogPost.id}>
-                    <div className="single-service border-bottom-hover">
-                        <div className="row">
-                            <h4>{blogPost.title}</h4>
-                            <img src={blogPost.image}></img>
-                        </div>
-                        <div className="row">
-                            <p>{blogPost.date} by {blogPost.author}</p>
-                            <p>"{blogPost.intro}"</p>
-                        </div>
-                        <div className="row">
-                            <div className="btn btn-outline-primary">Read More</div>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-        ))}
     </div>
+</div>
+<div className="brief white-bg">
+    <div className="container">
+        <div className="row">
+            {props.posts.node && props.posts.node.list.map(blogPost => (
+                 <div key={blogPost.id} className="col-md-4">       
+                 <Link to={"/blog/" + blogPost.id}>
+                     <div className="single-service border-bottom-hover">
+                         <div className="row">
+                             <img src={blogPost.image}></img>
+                         </div>
+                         <div className="row">
+                         <div className="col-md-12 content-section">
+                             <div className="small-text-medium uppercase colored-text">
+                                 {blogPost.date} by <strong>{blogPost.author}</strong>
+                             </div>
+                             <h3 className="text-left dark-text">
+                                 {blogPost.title}
+                             </h3>
+                             <div className="colored-line-left"></div>
+                             <div className="text-left">
+                                 <p className="dark-text">
+                                 "{blogPost.intro}"
+                                 </p>
+                             </div>
+                             <div className="bc-button-outline btn btn-outline-primary">Read More</div>
+                         </div>
+                         </div>
+                     </div>
+                 </Link>
+             </div>
+                ))}
+            </div>
     </div>
 </div>
 </Layout>
@@ -51,6 +64,6 @@ const BlogList = (props) => (
 export default withPhenomicApi(BlogList, props => ({
     posts: query({
       path: "blog",
-      limit: 3
+      after: props.params.after
     })
   }));
