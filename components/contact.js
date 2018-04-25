@@ -12,46 +12,54 @@ const Map = () => (
   </div>
 );
 
-const Email = () => (
-  <div className="contact brief grey-bg">
+const Email = (props) => (
+<div>
+<div className="contact brief grey-bg text-left">
   <div className="container">
-  <div className="row">
-      <div className="col-md-6 timeline-text text-left">
-          <div className="small-text-medium uppercase colored-text text-left">
-              Contact Us
-          </div>
-          <h2 className="text-left dark-text"><strong>Say</strong> Hello</h2>
-          <div className="colored-line-left">
-          </div>
-      </div>
-      
-  </div>
-  <div className="row">
-    <div className=" col-sm-12">
-      <p>
-        We are based out of Leeds city centre. Use the contact form to get in touch or to request a call back from one of the Box Concepts team.
-      </p>
-      </div>
-  </div>
     <div className="row">
-      <div className=" col-sm-12">
-        <ul className="feature-list text-left">
-          <li>
-            <span className="icon-basic-mail colored-text"></span>
-            <a href="mailto:hello@boxconcepts.co.uk" className="strong">hello@boxconcepts.co.uk</a>
-          </li>
-          <li>
-            <span className="icon-basic-geolocalize-01 colored-text"></span>
-            <a href="www.roundfoundrymediacenter.co.uk" className="strong">Round Foundry Media Center, Leeds LS11 5QP, UK</a>
-          </li>
-          <li>
-            <span className="icon-basic-tablet colored-text"></span>
-            <a href="#" className="strong">+tbc</a>
-          </li>
-        </ul>
-     </div>
+        <div className="col-md-6 content-section pull-left">
+            <div className="small-text-medium uppercase colored-text">
+              {(props.content.node && props.content.node.title)}
+            </div>
+            <h2 className="text-left dark-text"><strong>Say</strong> Hello</h2>
+            <div className="colored-line-left">
+            </div>
+            <div className="text-left">
+              {props.content.node && <BodyRenderer>{props.content.node.body}</BodyRenderer>}
+            </div>
+        </div>
+        <div className="col-md-6 pull-right">
+          <div className="brief-image-right">
+            <img src={props.content.node && props.content.node.image} alt={props.content.node && props.content.node.title}></img>
+          </div>
+        </div>
+    </div>  
+  </div>
+</div>
+<div className="contact-info">
+  <div className="container">
+      <div className="row contact-links">
+        <div className="col-sm-4">
+          <div className="icon-container">
+            <span className="fa fa-envelope colored-text"></span>
+          </div>
+          <a href="mailto:hello@boxconcepts.co.uk" className="strong">hello@boxconcepts.co.uk</a>
+        </div>
+        <div className="col-sm-4">
+          <div className="icon-container">
+            <span className="fa fa-map-pin colored-text"></span>
+          </div>
+          <a href="www.roundfoundrymediacenter.co.uk" className="strong">Round Foundry Media Center, Leeds LS11 5QP, UK</a>
+        </div>
+        <div className="col-sm-4">
+          <div className="icon-container">
+              <span className="fa fa-phone colored-text"></span>
+          </div>
+          <a href="#" className="strong">+tbc</a>
+        </div>
     </div>
   </div>
+</div>
 </div>
 );
 
@@ -127,8 +135,8 @@ const Testamonials = () => (
 
 const Contact = (props) => (
   <Layout title={(props.content.node && props.content.node.title)}>
-  <Email/>
-  <Map/>
+  <Email {...props}/>
+  <Map />
   <Testamonials/>
   </Layout>
 );

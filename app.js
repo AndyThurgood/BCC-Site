@@ -5,6 +5,7 @@ import "bootstrap-css-only/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 import "./styles.css";
 import "./blue.css";
+import "./responsive.css"
 import About from "./components/about";
 import Home from "./components/home";
 import Services from "./components/services";

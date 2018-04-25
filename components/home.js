@@ -57,24 +57,24 @@ const Home = (props) => (
     <div className="brief grey-bg text-left">
         <div className="container">
             <div className="row">
-                <div className="col-md-6 content-section">
+                <div className="col-md-6 pull-left content-section">
                     <div className="small-text-medium uppercase colored-text">
                         The Concept
                     </div>
-                    <h2 className="text-left dark-text">
+                    <h2 className="dark-text">
                         Our vision and Values
                     </h2>
                     <div className="colored-line-left">
                     </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-12 content-section">
                     <div className="text-left">
                         {props.content.node && <BodyRenderer>{props.content.node.body}</BodyRenderer>}
                     </div>
                 </div>
-                
+                <div className="col-md-6 pull-right">
+                      <div className="brief-image-right">
+                          <img src={props.content.node && props.content.node.image} alt={props.content.node && props.content.node.title}></img>
+                      </div>
+                </div>
             </div>
         </div>
     </div>

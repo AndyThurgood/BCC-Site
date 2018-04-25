@@ -673,7 +673,7 @@ a.white-text:hover {
 
 .brief .brief-image-right img {
 	float: right;
-	width: 92%;
+	width: 80%;
 }
 
 .brief .brief-image-left {
@@ -683,7 +683,7 @@ a.white-text:hover {
 
 .brief .brief-image-left img {
 	float: left;
-	width: 95%;
+	width: 80%;
 }
 
 .feature-list {

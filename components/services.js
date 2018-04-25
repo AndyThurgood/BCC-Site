@@ -19,7 +19,7 @@ const How = (props) => (
                 <div className="small-text-medium uppercase colored-text">
                     Our Services
                 </div>
-                <h2 className="dark-text"><strong>We Provide</strong> Services, leadership, strategy</h2>
+                <h2 className="dark-text"><strong>We Provide</strong> Services, Leadership, Strategy</h2>
                 <div className="colored-line-left">
                 </div>
                 <div className="sub-heading">

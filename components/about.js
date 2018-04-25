@@ -12,23 +12,23 @@ const About = (props) => (
   );
 
   const Story = (props) => (
-    <div className="brief grey-bg text-right">
+    <div className="brief grey-bg text-left">
           <div className="container">
               <div className="row">
-                  <div className="col-md-6 pull-left">
-                      <div className="brief-image-left">
-                          <img src={props.content.node && props.content.node.image} alt={props.content.node && props.content.node.title}></img>
-                      </div>
-                  </div>
-                  <div className="col-md-6 content-section pull-right">
+                  <div className="col-md-6 content-section pull-left">
                       <div className="small-text-medium uppercase colored-text">
                         About
                       </div>
-                      <h2 className="text-right dark-text"><strong>Our</strong> Short Story</h2>
-                      <div className="colored-line-right">
+                      <h2 className="text-left dark-text"><strong>Our</strong> Short Story</h2>
+                      <div className="colored-line-left">
                       </div>
-                      <div className="text-right">
+                      <div className="text-left">
                           {props.content.node && <BodyRenderer>{props.content.node.body}</BodyRenderer>}
+                      </div>
+                  </div>
+                  <div className="col-md-6 pull-right">
+                      <div className="brief-image-right">
+                          <img src={props.content.node && props.content.node.image} alt={props.content.node && props.content.node.title}></img>
                       </div>
                   </div>
               </div>
@@ -59,7 +59,7 @@ const Journey = () => (
                             Apr, 2012
                         </div>
                         <div className="icon-container color-bg white-text">
-                            <span className="icon-ribbon-alt"></span>
+                            <span className="fa fa-certificate"></span>
                         </div>
                         <div className="info">
                             Box-Concepts is founded.
@@ -70,7 +70,7 @@ const Journey = () => (
                             Apr, 2012
                         </div>
                         <div className="icon-container color-bg white-text">
-                            <span className="icon-piechart"></span>
+                            <span className="fa fa-code"></span>
                         </div>
                         <div className="info">
                             Box-Concepts agrees to provide technical resource to Capita and the Food Hygiene government division.
@@ -81,7 +81,7 @@ const Journey = () => (
                             July, 2013
                         </div>
                         <div className="icon-container color-bg white-text">
-                            <span className="icon-star-alt"></span>
+                            <span className="fa fa-star"></span>
                         </div>
                         <div className="info">
                             Box-Concepts leads a new insurance greenfield project for Munich RE, providing on site Architecture consultancy.
@@ -92,7 +92,7 @@ const Journey = () => (
                             July, 2014
                         </div>
                         <div className="icon-container color-bg white-text">
-                            <span className="icon-cart-alt"></span>
+                            <span className="fa fa-cart-plus"></span>
                         </div>
                         <div className="info">
                             Box-Concepts agrees to provide Northern Filters with a new online e-commerce platform.
@@ -103,7 +103,7 @@ const Journey = () => (
                             August, 2014
                         </div>
                         <div className="icon-container color-bg white-text">
-                            <span className="icon-check"></span>
+                            <span className="fa fa-check"></span>
                         </div>
                         <div className="info">
                             Box-Concepts provdes onsite consultancy to Virtual College Limited.

@@ -26,16 +26,24 @@ const BlogView = (props) => (
                     <Link to={"/blog/" + blogPost.id}>
                         <div className="single-service border-bottom-hover">
                             <div className="row">
-                                <h4 className="dark-text">{blogPost.title}</h4>
                                 <img src={blogPost.image}></img>
                             </div>
                             <div className="row">
-                                <p>{blogPost.date} by <strong>{blogPost.author}</strong></p>
+                            <div className="col-md-12 content-section">
+                                <div className="small-text-medium uppercase colored-text">
+                                    {blogPost.date} by <strong>{blogPost.author}</strong>
+                                </div>
+                                <h3 className="text-left dark-text">
+                                    {blogPost.title}
+                                </h3>
                                 <div className="colored-line-left"></div>
-                                <p className="dark-text">"{blogPost.intro}"</p>
-                            </div>
-                            <div className="row">
+                                <div className="text-left">
+                                    <p className="dark-text">
+                                    "{blogPost.intro}"
+                                    </p>
+                                </div>
                                 <div className="bc-button-outline btn btn-outline-primary">Read More</div>
+                            </div>
                             </div>
                         </div>
                     </Link>

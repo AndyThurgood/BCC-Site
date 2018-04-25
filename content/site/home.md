@@ -1,7 +1,7 @@
 ---
 title: "Box Concepts"
 subtitle: "Consultants, developers, architects and geeks:- creating quality technical solutions that form the foundations of business success."
-image: ""
+image: "images/equal-judge-law.png"
 ---
 
 Box-Concepts is a small consultancy that prides itself in doing the right thing. Our vision and values
